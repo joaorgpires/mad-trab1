@@ -60,10 +60,18 @@
 esta estrutura de custos, o problema de minimizar
 os custos de transporte é trivial.}}
 
-\qquad	Considerando que não temos nenhum tipo de restrição de capacidade, apenas iremos necessitar de usar uma nave, isso quer dizer que, a partir do ponto de índice 1, basta seguir para o planeta que se encontra mais próximo (considerando a distância euclidiana) do planeta em que nos encontramos actualmente para resolver o problema de minimização de custos, algo que torna esta tarefa trivial.
+\qquad	Considerando que não temos nenhum tipo de restrição de capacidade, podemos focar-nos na ideia de enviar a soma da procura dos planetas que ainda não foram visitados para o planeta mais próximo, num ponto de vista de distância euclidiana, em vez de enviar a procura de cada planeta directamente para o respectivo.
 
 \section{\textbf{Formule em programação matemática o problema
 anterior (i.e., sem restrições de capacidade).
 Resolva-o, e mostre que a solução é a esperada.}}
+
+\textit{Variáveis de Decisão:}
+\\*
+\qquad - \textbf{ENVIAR} i,j: Quantidade de unidades que vamos enviar entre um par de planetas, planeta i e planeta j. \\* \\*
+\textit{Restrições: \\* - \textbf{ENVIAR} i,j > 0}
+\\* \\*
+\textit{Função Objectivo:} \\*
+\qquad \textbf{min z} = somatório do \textbf{custo} i,j * \textbf{ENVIAR} i,j (depois coloco isto em linguagem matemática, agora tenho de ir para a aula)
 
 \end{document}
