@@ -8,6 +8,8 @@
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \usepackage[pdftex]{graphicx}	
 \usepackage{url}
+\usepackage{verbatim}
+\usepackage{mathtools}
 
 
 %%% Custom sectioning
@@ -40,14 +42,16 @@
 		\usefont{OT1}{bch}{b}{n}
 		\normalfont \normalsize \textsc{Faculdade de Ciências da Universidade do Porto} \\ [25pt]
 		\horrule{0.5pt} \\[0.4cm]
-		\huge Métodos de Apoio à Decisão - Trabalho 1 \\
+		\Huge Métodos de Apoio à Decisão - Trabalho 1 \\
 		\horrule{2pt} \\[0.5cm]
 }
 \author{
-		\normalfont 								\normalsize
-        João Pedro Pereira dos Santos 201305900\\[-3pt]		\normalsize
+\\*
+		\normalfont 								
+\large
+        João Pedro Pereira dos Santos 201305900\\[-3pt]		\large
         João Rebelo Grifo Pires 201200384\\ [-3pt]
-\normalsize  
+\large
 		\today 
 	   }
 \date{}
@@ -55,12 +59,16 @@
 
 %%% Begin document
 \begin{document}
+
+
 \maketitle
+
+\newpage
 \section{\textbf{Mostre que sem a restrição de capacidade, e com
 esta estrutura de custos, o problema de minimizar
 os custos de transporte é trivial.}}
 
-\qquad	Considerando que não temos nenhum tipo de restrição de capacidade, podemos focar-nos na ideia de enviar a soma da procura dos planetas que ainda não foram visitados para o planeta mais próximo, num ponto de vista de distância euclidiana, em vez de enviar a procura de cada planeta directamente para o respectivo.
+\qquad	Considerando que não temos nenhum tipo de restrição de capacidade, a solução é sempre trivial pois a distância mínima entre dois planetas (que reflete também o custo mínimo) é encontrada traçando uma trajetória reta e direta  desde o planeta em que nos encontramos para o planeta para que queremos ir, levando apenas os recursos que tencionamos trocar.
 
 \section{\textbf{Formule em programação matemática o problema
 anterior (i.e., sem restrições de capacidade).
@@ -68,10 +76,19 @@ Resolva-o, e mostre que a solução é a esperada.}}
 
 \textit{Variáveis de Decisão:}
 \\*
-\qquad - \textbf{ENVIAR} i,j: Quantidade de unidades que vamos enviar entre um par de planetas, planeta i e planeta j. \\* \\*
-\textit{Restrições: \\* - \textbf{ENVIAR} i,j > 0}
+\qquad 
+- \textbf{X}i,j: Quantidade de unidades que vamos enviar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
+- \textbf{C}i,j: Custo para movimentar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
+- \textbf{x}: Coordenada cartesiana referente à disposição de cada um dos planetas no eixo dos xx; \\* 
+- \textbf{y}: Coordenada cartesiana referente à disposição de cada um dos planetas no eixo dos yy; \\* \\*
+
+\textit{Restrições: 
+\\* - \textbf{X}i,j >= 0; 
+\\* - x, y >= 0;
+\\* -$\displaystyle \sum_{i,j=1}^{25} \textbf{X}j,i - \sum_{i,j=1}^{25} \textbf{X}i,j$ = \textbf{d}i}
 \\* \\*
+
 \textit{Função Objectivo:} \\*
-\qquad \textbf{min z} = somatório do \textbf{custo} i,j * \textbf{ENVIAR} i,j (depois coloco isto em linguagem matemática, agora tenho de ir para a aula)
+\qquad \textbf{min z} = $\displaystyle \sum_{i,j=1}^{25} \textbf{C}i,j * \textbf{X}i,j$
 
 \end{document}
