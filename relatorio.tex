@@ -74,21 +74,26 @@ os custos de transporte é trivial.}}
 anterior (i.e., sem restrições de capacidade).
 Resolva-o, e mostre que a solução é a esperada.}}
 
-\textit{Variáveis de Decisão:}
+\qquad\textit{Variáveis de Decisão:}
 \\*
-\qquad 
-- \textbf{X}i,j: Quantidade de unidades que vamos enviar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
+- \textbf{K}i,j: Quantidade de unidades que vamos enviar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
 - \textbf{C}i,j: Custo para movimentar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
 - \textbf{x}: Coordenada cartesiana referente à disposição de cada um dos planetas no eixo dos xx; \\* 
-- \textbf{y}: Coordenada cartesiana referente à disposição de cada um dos planetas no eixo dos yy; \\* \\*
+- \textbf{y}: Coordenada cartesiana referente à disposição de cada um dos planetas no eixo dos yy; \\*
+- \textbf(d)i,j: Informação quanto ao estado (Procura ou Produção) de cada planeta.
+\\* \\*
+Nota: \\*
+\textbf{d}i > 0 Entrada - Saída = Procura; \\* 
+\textbf{d}i = 0 Entrada = Saída; \\* 
+\textbf{d}i < 0 Saída - Entrada = Produção; \\* 
 
 \textit{Restrições: 
-\\* - \textbf{X}i,j >= 0; 
+\\* - \textbf{K}i,j >= 0; 
 \\* - x, y >= 0;
-\\* -$\displaystyle \sum_{i,j=1}^{25} \textbf{X}j,i - \sum_{i,j=1}^{25} \textbf{X}i,j$ = \textbf{d}i}
+\\* -$\displaystyle \sum_{i,j=1}^{25} \textbf{K}j,i - \sum_{i,j=1}^{25} \textbf{K}i,j$ = \textbf{d}i};
 \\* \\*
 
 \textit{Função Objectivo:} \\*
-\qquad \textbf{min z} = $\displaystyle \sum_{i,j=1}^{25} \textbf{C}i,j * \textbf{X}i,j$
+\qquad \textbf{min z} = $\displaystyle \sum_{i,j=1}^{25} \textbf{C}i,j * \textbf{K}i,j$
 
 \end{document}
