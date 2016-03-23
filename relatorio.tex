@@ -136,5 +136,13 @@ Nota: \\*
 
 Para descrever uma parte da solução que difira da da alínea anterior, pretendo usar as trocas que vão ser feitas entre o planeta 2 e o planeta 15, em que o planeta 2 envia 1800 unidades para o planeta 15 e o planeta 15 envia 222 unidades para o planeta 2. Perante estes dados, temos uma solução para a qual as naves com restrição não podem responder da mesma forma que responderam as naves sem restrição de capacidade.
 
+\newpage
+\section{\textbf{Por um custo de 1 exo por cada nave, pode-se
+aumentar a sua capacidade em 1 U. Indique se
+essa operação compensa.}}
+
+Para verificar se essa operação compensa, basta alterar o código usado na pergunta anterior no campo MAXCAPACIDADE para 1001, visto que a capacidade foi aumentada em 1 U, e somar 1 no somatório do ENVIAR (presente nas restrições RECEBIDO e ENVIADO) entre cada par de planetas, já que o custo por viagem foi aumentado em 1 EXO por cada nave.
+
+Obviamente que esta alteração dificilmente surge efeito para casos de 4 planetas, no entanto, no caso dos 25 planetas podemos ver que a operação compensa em termos de custos.
 
 \end{document}
