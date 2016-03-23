@@ -74,7 +74,7 @@ os custos de transporte é trivial.}}
 anterior (i.e., sem restrições de capacidade).
 Resolva-o, e mostre que a solução é a esperada.}}
 
-\qquad\textit{Variáveis de Decisão:}
+\textit{Variáveis de Decisão:}
 \\*
 - \textbf{K}i,j: Quantidade de unidades que vamos enviar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
 - \textbf{C}i,j: Custo para movimentar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
@@ -95,5 +95,46 @@ Nota: \\*
 
 \textit{Função Objetivo:} \\*
 \qquad \textbf{min z} = $\displaystyle \sum_{i,j=1}^{25} \textbf{C}i,j * \textbf{K}i,j$
+
+\newpage
+
+\section{\textbf{Formule o problema (com restrições de capacidade)em programação matemática. Resolva-o, e
+compare o valor ótimo do objetivo com o da alínea
+anterior. Descreva uma parte da solução (à sua escolha)
+que difira da da alínea anterior.}}
+
+
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[width=165mm]{planetas.png}
+%\caption{Procura entre cada planeta \label{overflow}}
+%\end{figure}
+
+\textit{Variáveis de Decisão:}
+\\*
+- \textbf{K}i,j: Quantidade de unidades que vamos enviar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
+- \textbf{C}i,j: Custo para movimentar entre um par de planetas, planeta de índice i e planeta de índice j; \\* 
+- \textbf{x}: Coordenada cartesiana referente à disposição de cada um dos planetas no eixo dos xx; \\* 
+- \textbf{y}: Coordenada cartesiana referente à disposição de cada um dos planetas no eixo dos yy; \\*
+- \textbf{d}i,j: Informação quanto ao estado (Procura ou Produção) de cada planeta.
+\\* \\*
+Nota: \\*
+\textbf{d}i > 0 Entrada - Saída = Procura; \\* 
+\textbf{d}i = 0 Entrada = Saída; \\* 
+\textbf{d}i < 0 Saída - Entrada = Produção; \\* \\*
+\textit{Restrições: 
+\\* - \textbf{K}i,j >= 0; 
+\\* - x, y >= 0;
+\\* - \textbf{K}i,j <= 1000;
+\\* -$\displaystyle \sum_{j=1}^{25} \textbf{K}j,i - \sum_{j=1}^{25} \textbf{K}i,j$ = \textbf{d}i};
+\\* \\*
+
+\textit{Função Objetivo:} \\*
+\qquad \textbf{min z} = $\displaystyle \sum_{i,j=1}^{25} \textbf{C}i,j * \textbf{K}i,j$
+\\* \\* \\* 
+\qquad    A limitação imposta faz com que necessitemos de um planeta intermediário, onde podemos apanhar mais carga, de forma a conseguirmos ter num planeta, do que aquela que uma nave aguenta. \\*
+
+Para descrever uma parte da solução que difira da da alínea anterior, pretendo usar as trocas que vão ser feitas entre o planeta 2 e o planeta 15, em que o planeta 2 envia 1800 unidades para o planeta 15 e o planeta 15 envia 222 unidades para o planeta 2. Perante estes dados, temos uma solução para a qual as naves com restrição não podem responder da mesma forma que responderam as naves sem restrição de capacidade.
+
 
 \end{document}
