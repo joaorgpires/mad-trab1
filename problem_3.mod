@@ -20,6 +20,8 @@ subject to MAX_ENVIAR {i in PLANETAS, j in PLANETAS} : ENVIAR[i,j,i,j] >= (if PR
 
 subject to RECEBIDO {i in PLANETAS, j in PLANETAS} : sum {o in PLANETAS} ENVIAR[i,j,o,j]=PROCURA_PLANETA[i,j];
 
+# subject to DESCOLAGEM {i in PLANETAS, j in PLANETAS} : (if CARGA_PLANETA[j] + ENVIAR [i,j,o,j] <= MAX_CAPACIDADE then ENVIADO[j,i] else MAX_CAPACIDADE)
+
 subject to ENVIADO {i in PLANETAS, j in PLANETAS} : sum {o in PLANETAS} ENVIAR[i,j,i,o]=PROCURA_PLANETA[i,j];
 
 minimize cost: sum {i in PLANETAS, j in PLANETAS} ENVIAR[i,j,i,j]*DISTANCIA[i,j];
@@ -33,25 +35,27 @@ printf {i in PLANETAS,j in PLANETAS,o in PLANETAS,f in PLANETAS} if(i!=j) then "
 
 data;
 set PLANETAS := 1 2 3 4;
-param MAX_CAPACIDADE := 300;
+param MAX_CAPACIDADE := 1000;
 
 param POSICAO_X :=
-1 69
-2 18
 3 14
-4 29;
+4 29
+23 58
+24 34;
 
 param POSICAO_Y :=
-1 85
-2 23
 3 22
-4 43;
+4 43
+23 59
+24 29;
 
 param PROCURA_PLANETA : 1 2 3 4 :=
-1 0       83      112     358   
-2 102     0       193     243     
-3 24      178     0       218   
-4 37      352     428     0;
+3 0       218     709     120   
+4 428     0       633     507     
+23 135     1223     0       432   
+24 447     1153     269    0;
+
+
 
 end;
 

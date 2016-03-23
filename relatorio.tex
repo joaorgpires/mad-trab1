@@ -132,9 +132,9 @@ Nota: \\*
 \textit{Função Objetivo:} \\*
 \qquad \textbf{min z} = $\displaystyle \sum_{i,j=1}^{25} \textbf{C}i,j * \textbf{K}i,j$
 \\* \\* \\* 
-\qquad    A limitação imposta faz com que necessitemos de um planeta intermediário, onde podemos apanhar mais carga, de forma a conseguirmos ter num planeta, do que aquela que uma nave aguenta. \\*
+\qquad    A limitação imposta faz com que necessitemos de um planeta intermediário, onde podemos deixar e apanhar mais carga de forma a perfazer o nosso limite caso haja planetas com excedente, obviamente não vamos ter a condição de apenas descolar a nave caso o limite de peso seja atingido, de forma a conseguirmos ter num planeta o excedente de carga que não conseguimos transportar numa nave. \\*
 
-Para descrever uma parte da solução que difira da da alínea anterior, pretendo usar as trocas que vão ser feitas entre o planeta 2 e o planeta 15, em que o planeta 2 envia 1800 unidades para o planeta 15 e o planeta 15 envia 222 unidades para o planeta 2. Perante estes dados, temos uma solução para a qual as naves com restrição não podem responder da mesma forma que responderam as naves sem restrição de capacidade.
+Para descrever uma parte da solução que difira da da alínea anterior, pretendo usar as trocas que vão ser feitas entre o planeta 2 e o planeta 15, em que o planeta 2 envia 1800 unidades para o planeta 15 e o planeta 15 envia 222 unidades para o planeta 2. Perante estes dados, temos uma solução para a qual as naves com restrição não podem responder da mesma forma que responderam as naves sem restrição de capacidade, sendo necessário largar alguma carga num planeta intermediário.
 
 \newpage
 \section{\textbf{Por um custo de 1 exo por cada nave, pode-se
@@ -143,6 +143,6 @@ essa operação compensa.}}
 
 Para verificar se essa operação compensa, basta alterar o código usado na pergunta anterior no campo MAXCAPACIDADE para 1001, visto que a capacidade foi aumentada em 1 U, e somar 1 no somatório do ENVIAR (presente nas restrições RECEBIDO e ENVIADO) entre cada par de planetas, já que o custo por viagem foi aumentado em 1 EXO por cada nave.
 
-Obviamente que esta alteração dificilmente surge efeito para casos de 4 planetas, no entanto, no caso dos 25 planetas podemos ver que a operação compensa em termos de custos.
+Obviamente que para procuras inferiores a 1000 U, esta alteração não vai ser compensatória, no entanto, se olharmos para o conjunto dos 25 planetas, esta operação compensa em termos de custos.
 
 \end{document}
